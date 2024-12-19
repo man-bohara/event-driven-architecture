@@ -1,0 +1,21 @@
+micronaut:
+  application:
+    name: kafka-mysql-listener
+
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/testdb
+    username: testuser
+    password: testpassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+
+kafka:
+  bootstrap:
+    servers: localhost:9092
