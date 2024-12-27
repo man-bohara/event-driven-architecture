@@ -18,6 +18,7 @@ dependencies {
     implementation("io.micronaut.kafka:micronaut-kafka")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("jakarta.persistence:jakarta.persistence-api")
+    runtimeOnly("io.micronaut.sql:micronaut-jdbc-tomcat")
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
     implementation("org.hibernate.orm:hibernate-core")
     runtimeOnly("mysql:mysql-connector-java")
@@ -29,11 +30,11 @@ dependencies {
 
 
 application {
-    mainClass = "com.example.Application"
+    mainClass = "com.kafka.example.Application"
 }
 java {
-    sourceCompatibility = JavaVersion.toVersion("21")
-    targetCompatibility = JavaVersion.toVersion("21")
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
 }
 
 
@@ -65,7 +66,7 @@ micronaut {
 
 
 tasks.named<io.micronaut.gradle.docker.NativeImageDockerfile>("dockerfileNative") {
-    jdkVersion = "21"
+    jdkVersion = "17"
 }
 
 
