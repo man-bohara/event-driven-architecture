@@ -3,6 +3,7 @@ plugins {
     id("io.micronaut.application") version "4.4.4"
     id("io.micronaut.test-resources") version "4.4.4"
     id("io.micronaut.aot") version "4.4.4"
+    id("com.google.cloud.tools.jib") version "3.4.0"
 }
 
 version = "0.1"
@@ -15,17 +16,20 @@ repositories {
 dependencies {
     annotationProcessor("io.micronaut:micronaut-http-validation")
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
+
     implementation("io.micronaut.kafka:micronaut-kafka")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("jakarta.persistence:jakarta.persistence-api")
-    runtimeOnly("io.micronaut.sql:micronaut-jdbc-tomcat")
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
     implementation("org.hibernate.orm:hibernate-core")
-    runtimeOnly("mysql:mysql-connector-java")
     compileOnly("io.micronaut:micronaut-http-client")
+
+    testImplementation("io.micronaut:micronaut-http-client")
+
+    runtimeOnly("io.micronaut.sql:micronaut-jdbc-tomcat")
+    runtimeOnly("mysql:mysql-connector-java")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("org.yaml:snakeyaml")
-    testImplementation("io.micronaut:micronaut-http-client")
 }
 
 

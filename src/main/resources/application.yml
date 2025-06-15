@@ -1,6 +1,6 @@
 micronaut:
   application:
-    name: kafka-mysql-listener
+    name: event-driven-architecture
 
 datasources:
   default:

@@ -1,4 +1,4 @@
 
 
-rootProject.name="kafka-mysql-listener"
+rootProject.name="event-driven-architecture"
 
