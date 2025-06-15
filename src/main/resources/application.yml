@@ -8,6 +8,7 @@ datasources:
     username: testuser
     password: testpassword
     driver-class-name: com.mysql.cj.jdbc.Driver
+    enabled: false
 
 jpa:
   default:
