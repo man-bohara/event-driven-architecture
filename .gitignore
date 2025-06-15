@@ -32,4 +32,9 @@ replay_pid*
 # Ignore .idea folder
 .idea/
 
+# Ignore unecessary .lock .bin .probe
+*.lock
+*.bin
+*.probe
+
 
