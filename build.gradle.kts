@@ -70,7 +70,8 @@ micronaut {
 
 jib {
     to {
-        image = "man1983/event-driven-architecture:latest"
+        image = "man1983/event-driven-architecture"
+        tags = setOf("latest", "${version}-${System.currentTimeMillis()}")
         auth {
             username = System.getenv("DOCKERHUB_USERNAME")
             password = System.getenv("DOCKERHUB_TOKEN")
