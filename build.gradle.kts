@@ -68,6 +68,16 @@ micronaut {
     }
 }
 
+jib {
+    to {
+        image = "dockerhub-man1983/event-driven-architecture:latest"
+        auth {
+            username = System.getenv("DOCKERHUB_USERNAME")
+            password = System.getenv("DOCKERHUB_TOKEN")
+        }
+    }
+}
+
 
 tasks.named<io.micronaut.gradle.docker.NativeImageDockerfile>("dockerfileNative") {
     jdkVersion = "17"
