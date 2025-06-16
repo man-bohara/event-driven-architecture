@@ -70,7 +70,7 @@ micronaut {
 
 jib {
     to {
-        image = "dockerhub-username/event-driven-architecture:latest"
+        image = "man1983/event-driven-architecture:latest"
         auth {
             username = System.getenv("DOCKERHUB_USERNAME")
             password = System.getenv("DOCKERHUB_TOKEN")
